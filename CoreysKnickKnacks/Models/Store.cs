@@ -41,25 +41,30 @@ namespace CoreysKnickKnacks.Models
             _name = name;
         }
 
-        public void AddStoreItem(Product prod)
+        public StoreItem AddStoreItem(Product prod, int quantity)
         {
-            if (_product1 == null)
-            {
-                _product1 = prod;
-            }
 
-            else if (_product2 == null)
-            {
-                _product2 = prod;
-            }
-
-            else if (_product3 == null)
-            {
-                _product3 = prod;
-            }
-
-            prod = null;
         }
+
+        //public void AddStoreItem(Product prod)
+        //{
+            //if (_product1 == null)
+            //{
+                //_product1 = prod;
+            //}
+
+            //else if (_product2 == null)
+            //{
+                //_product2 = prod;
+            //}
+
+            //else if (_product3 == null)
+            //{
+                //_product3 = prod;
+            //}
+
+            //prod = null;
+        //}
 
         public void RemoveStoreItem(int productNum)
         {

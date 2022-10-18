@@ -15,7 +15,7 @@ namespace CoreysKnickKnacks.Models
         private ShoppingCartItem _product3;
         private List<ShoppingCartItem> Products;
 
-        //constructor for receiving Customer
+        //constructor for receiving Customer and List
         public ShoppingCart(Customer cust)
         {
             _Customer = cust;
@@ -30,57 +30,70 @@ namespace CoreysKnickKnacks.Models
 
         public ShoppingCartItem AddProduct(Product prod, int quantity)
         {
-            // checks for valid quantity
-            if (quantity < 1)
+            //getting product 
+            var cartProduct =
+                Products.SingleOrDefault(cp => cp.GetProduct().GetId() == prod.GetId() && cp.GetQuantity() = quantity)
+                cartProduct.ShoppingCartItem.Add();
+            
+            if (cartProduct == null)
             {
-                return null;
+                cartProduct.ShoppingCartItem.Add();                 
             }
+        }
+
+        //public ShoppingCartItem AddProduct(Product prod, int quantity)
+        //{
+            // checks for valid quantity
+            //if (quantity < 1)
+            //{
+                //return null;
+            //}
 
             // checking for product and adds the quantity if its found
-            if (_product1 != null && _product1.GetProduct().GetId() == prod.GetId())
-            {
-                _product1.SetQuantity(_product1.GetQuantity() + quantity);
-                return _product1;
-            }
+            //if (_product1 != null && _product1.GetProduct().GetId() == prod.GetId())
+            //{
+                //_product1.SetQuantity(_product1.GetQuantity() + quantity);
+                //return _product1;
+            //}
 
-            if (_product2 != null && _product2.GetProduct().GetId() == prod.GetId())
-            {
-                _product2.SetQuantity(_product2.GetQuantity() + quantity);
-                return _product2;
-            }
+            //if (_product2 != null && _product2.GetProduct().GetId() == prod.GetId())
+            //{
+                //_product2.SetQuantity(_product2.GetQuantity() + quantity);
+                //return _product2;
+            //}
 
-            if (_product3 != null && _product3.GetProduct().GetId() == prod.GetId())
-            {
-                _product3.SetQuantity(_product3.GetQuantity() + quantity);
-                return _product3;
-            }
+            //if (_product3 != null && _product3.GetProduct().GetId() == prod.GetId())
+            //{
+                //_product3.SetQuantity(_product3.GetQuantity() + quantity);
+                //return _product3;
+            //}
 
             // adding new product if there is none
-            if (_product1 == null)
-            {
-                _product1 = new ShoppingCartItem(prod, quantity);
-                return _product1;
-            }
+            //if (_product1 == null)
+            //{
+                //_product1 = new ShoppingCartItem(prod, quantity);
+                //return _product1;
+            //}
 
-            if (_product2 == null)
-            {
-                _product2 = new ShoppingCartItem(prod, quantity);
-                return _product2;
-            }
+            //if (_product2 == null)
+            //{
+                //_product2 = new ShoppingCartItem(prod, quantity);
+                //return _product2;
+            //}
 
-            if (_product3 == null)
-            {
-                _product3 = new ShoppingCartItem(prod, quantity);
-                return _product3;
-            }
+            //if (_product3 == null)
+            //{
+                //_product3 = new ShoppingCartItem(prod, quantity);
+                //return _product3;
+            //}
 
-            return null;
-        }
+            //return null;
+        //}
 
-        public ShoppingCartItem AddProduct(Product prod)
-        {
-            return AddProduct(prod, 1);
-        }
+        //public ShoppingCartItem AddProduct(Product prod)
+        //{
+            //return AddProduct(prod, 1);
+        //}
 
         public ShoppingCartItem RemoveProduct(Product prod, int quantity)
         {
@@ -159,6 +172,7 @@ namespace CoreysKnickKnacks.Models
 
         public decimal GetTotal()
         {
+            //use linq sum query
             decimal _p1 = (_product1.GetQuantity() * _product1.GetProduct().GetPrice());
             decimal _p2 = (_product2.GetQuantity() * _product2.GetProduct().GetPrice());
             decimal _p3 = (_product3.GetQuantity() * _product3.GetProduct().GetPrice());
