@@ -51,6 +51,8 @@ namespace CoreysKnickKnacks.Models
                 cartProduct = new ShoppingCartItem(prod, quantity);
                 return cartProduct;
             }
+
+            return null;
         }
 
         //public ShoppingCartItem AddProduct(Product prod, int quantity)
