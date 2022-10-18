@@ -41,32 +41,32 @@ namespace CoreysKnickKnacks.Models
             _name = name;
         }
 
-        public StoreItem AddStoreItem(Product prod, int quantity)
-        {
-
-
-            return null;
-        }
-
-        //public void AddStoreItem(Product prod)
+        //public StoreItem AddStoreItem(Product prod, int quantity)  THIS IS WHAT YOU WILL USE
         //{
-            //if (_product1 == null)
-            //{
-                //_product1 = prod;
-            //}
 
-            //else if (_product2 == null)
-            //{
-                //_product2 = prod;
-            //}
 
-            //else if (_product3 == null)
-            //{
-                //_product3 = prod;
-            //}
-
-            //prod = null;
+            //return null;
         //}
+
+        public void AddStoreItem(Product prod)
+        {
+            if (_product1 == null)
+            {
+                _product1 = prod;
+            }
+
+            else if (_product2 == null)
+            {
+                _product2 = prod;
+            }
+
+            else if (_product3 == null)
+            {
+                _product3 = prod;
+            }
+
+            prod = null;
+        }
 
         public void RemoveStoreItem(int productNum)
         {
@@ -86,59 +86,59 @@ namespace CoreysKnickKnacks.Models
             }
         }
 
-        public List<StoreItem> GetStoreItem()
+        //public List<StoreItem> GetStoreItem()  THIS IS WHAT YOU WILL USE
+        //{
+            //return Items;
+        //}
+
+        public Product GetStoreItem(int productNum)
         {
-            return Items;
+            if (productNum == 1)
+            {
+                return _product1;
+            }
+
+            else if (productNum == 2)
+            {
+                return _product2;
+            }
+
+            else if (productNum == 3)
+            {
+                return _product3;
+            }
+
+            return null;
+
         }
 
-        //public Product GetStoreItem(int productNum)
+        //public Product FindStoreItemById(int id)  THIS IS WHAT YOU WILL USE
         //{
-            //if (productNum == 1)
-            //{
-                //return _product1;
-            //}
-
-            //else if (productNum == 2)
-            //{
-               // return _product2;
-            //}
-
-            //else if (productNum == 3)
-            //{
-                //return _product3;
-            //}
+            //Items.FirstOrDefault(x => GetId() == id);
 
             //return null;
-
         //}
 
         public Product FindStoreItemById(int id)
         {
             Items.FirstOrDefault(x => GetId() == id);
+            if (id == _product1.GetId())
+            {
+                return _product1;
+            }
+
+            else if (id == _product2.GetId())
+            {
+                return _product2;
+            }
+
+            else if (id == _product3.GetId())
+            {
+                return _product3;
+            }
 
             return null;
+
         }
-
-        //public Product FindStoreItemById(int id)
-        //{
-            //Items.FirstOrDefault(x => GetId() == id);
-            //if (id == _product1.GetId())
-            //{
-                //return _product1;
-            //}
-
-            //else if (id == _product2.GetId())
-            //{
-                //return _product2;
-            //}
-
-            //else if (id == _product3.GetId())
-            //{
-                //return _product3;
-            //}
-
-            //return null;
-
-        //}
     }
 }
