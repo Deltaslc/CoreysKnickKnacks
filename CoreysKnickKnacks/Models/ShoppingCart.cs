@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,13 +40,13 @@ namespace CoreysKnickKnacks.Models
                 return null;                 
             }
 
-            if (cartProduct != null)
+            if (Products != null)
             {
-                cartProduct.SetQuantity(cartProduct.GetQuantity() + quantity);
+                cartProduct.SetQuantity(cartProduct.GetQuantity() + 1);
                 return cartProduct;
             }
 
-            if (cartProduct == null)
+            if (Products == null)
             {
                 cartProduct = new ShoppingCartItem(prod, quantity);
                 return cartProduct;
@@ -103,10 +104,10 @@ namespace CoreysKnickKnacks.Models
             //return null;
         //}
 
-        //public ShoppingCartItem AddProduct(Product prod)
-        //{
-            //return AddProduct(prod, 1);
-        //}
+        public ShoppingCartItem AddProduct(Product prod)
+        {
+            return AddProduct(prod, 1);
+        }
 
         public ShoppingCartItem RemoveProduct(Product prod, int quantity)
         {
