@@ -35,9 +35,21 @@ namespace CoreysKnickKnacks.Models
                 Products.SingleOrDefault(cp => cp.GetProduct().GetId() == prod.GetId() && cp.GetQuantity() = quantity);
                 cartProduct.ShoppingCartItem.Add();
             
+            if (quantity < 1)
+            {
+                return null;                 
+            }
+
+            if (cartProduct != null)
+            {
+                cartProduct.SetQuantity(cartProduct.GetQuantity() + quantity);
+                return cartProduct;
+            }
+
             if (cartProduct == null)
             {
-                cartProduct.ShoppingCartItem.Add();                 
+                cartProduct = new ShoppingCartItem(prod, quantity);
+                return cartProduct;
             }
         }
 
