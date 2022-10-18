@@ -44,6 +44,8 @@ namespace CoreysKnickKnacks.Models
         public StoreItem AddStoreItem(Product prod, int quantity)
         {
 
+
+            return null;
         }
 
         //public void AddStoreItem(Product prod)
