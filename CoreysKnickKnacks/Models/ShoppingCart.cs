@@ -13,12 +13,13 @@ namespace CoreysKnickKnacks.Models
         private ShoppingCartItem _product1;
         private ShoppingCartItem _product2;
         private ShoppingCartItem _product3;
-        private List<ShoppingCartItem> Products = new List<ShoppingCartItem>();
+        private List<ShoppingCartItem> Products;
 
         //constructor for receiving Customer
         public ShoppingCart(Customer cust)
         {
             _Customer = cust;
+            Products = new List<ShoppingCartItem>();
         }
 
         //methods
@@ -157,17 +158,9 @@ namespace CoreysKnickKnacks.Models
             return _p1 + _p2 + _p3;
         }
 
-        public List<ShoppingCartItem> GetProducts()
+        public List<ShoppingCartItem> GetProduct() //SHOULD THIS BE GETPRODUCT()
         {
-            //getting products with Linq
-            var getProducts =
-                from p in Products 
-                select p;
-
-            foreach (var item in getProducts)
-            {
-                Products.Add(Product); 
-            }
+            return Products;
         }
 
         //public ShoppingCartItem GetProduct(int productNum)

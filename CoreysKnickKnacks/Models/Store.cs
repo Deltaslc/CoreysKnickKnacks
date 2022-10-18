@@ -13,12 +13,12 @@ namespace CoreysKnickKnacks.Models
         private Product _product1;
         private Product _product2;
         private Product _product3;
-        private List<StoreItem> Items = new List<StoreItem>();
+        private List<StoreItem> Items;
 
         //constructor for store
         public Store()
         {
-
+            Items = new List<StoreItem>();
         }
 
         public int GetId()
@@ -79,26 +79,31 @@ namespace CoreysKnickKnacks.Models
             }
         }
 
-        public Product GetStoreItem(int productNum)
+        public List<StoreItem> GetStoreItem()
         {
-            if (productNum == 1)
-            {
-                return _product1;
-            }
-
-            else if (productNum == 2)
-            {
-                return _product2;
-            }
-
-            else if (productNum == 3)
-            {
-                return _product3;
-            }
-
-            return null;
-
+            return Items;
         }
+
+        //public Product GetStoreItem(int productNum)
+        //{
+            //if (productNum == 1)
+            //{
+                //return _product1;
+            //}
+
+            //else if (productNum == 2)
+            //{
+               // return _product2;
+            //}
+
+            //else if (productNum == 3)
+            //{
+                //return _product3;
+            //}
+
+            //return null;
+
+        //}
 
         public Product FindStoreItemById(int id)
         {
