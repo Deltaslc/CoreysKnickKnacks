@@ -129,22 +129,25 @@ namespace CoreysKnickKnacks.Models
             return null;
         }
 
-        public ShoppingCartItem GetProductById(int id)
+        public ShoppingCartItem GetProduct(int id) //Changed from GetProductById as test was failing
         {
-            if (id == _product1.GetProduct().GetId())
-            {
-                return _product1;
-            }
+            //linq query FirstOrDefault
+            Products.FirstOrDefault(x => x.GetProduct().GetId() == id);
+            
+            //if (id == _product1.GetProduct().GetId())
+            //{
+                //return _product1;
+            //}
 
-            if (id == _product2.GetProduct().GetId())
-            {
-                return _product2;
-            }
+            //if (id == _product2.GetProduct().GetId())
+            //{
+                //return _product2;
+            //}
 
-            if (id == _product3.GetProduct().GetId())
-            {
-                return _product3;
-            }
+            //if (id == _product3.GetProduct().GetId())
+            //{
+                //return _product3;
+            //}
 
             return null;
         }
@@ -158,7 +161,7 @@ namespace CoreysKnickKnacks.Models
             return _p1 + _p2 + _p3;
         }
 
-        public List<ShoppingCartItem> GetProduct() //SHOULD THIS BE GETPRODUCT()
+        public List<ShoppingCartItem> GetProducts() //SHOULD THIS BE GETPRODUCT()
         {
             return Products;
         }
