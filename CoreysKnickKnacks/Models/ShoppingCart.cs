@@ -32,7 +32,7 @@ namespace CoreysKnickKnacks.Models
         {
             //getting product 
             var cartProduct =
-                Products.SingleOrDefault(cp => cp.GetProduct().GetId() == prod.GetId() && cp.GetQuantity() = quantity)
+                Products.SingleOrDefault(cp => cp.GetProduct().GetId() == prod.GetId() && cp.GetQuantity() = quantity);
                 cartProduct.ShoppingCartItem.Add();
             
             if (cartProduct == null)
