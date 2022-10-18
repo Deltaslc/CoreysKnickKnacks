@@ -13,7 +13,7 @@ namespace CoreysKnickKnacks.Models
         private ShoppingCartItem _product1;
         private ShoppingCartItem _product2;
         private ShoppingCartItem _product3;
-        private List<ShoppingCartItem> Products;
+        private List<ShoppingCartItem> Products = new List<ShoppingCartItem>();
 
         //constructor for receiving Customer
         public ShoppingCart(Customer cust)
@@ -162,13 +162,11 @@ namespace CoreysKnickKnacks.Models
             //getting products with Linq
             var getProducts =
                 from p in Products 
-
-                where Products.Add() 
                 select p;
 
             foreach (var item in getProducts)
             {
-                return Products; 
+                Products.Add(Product); 
             }
         }
 

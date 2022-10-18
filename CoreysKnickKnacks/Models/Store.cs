@@ -13,7 +13,7 @@ namespace CoreysKnickKnacks.Models
         private Product _product1;
         private Product _product2;
         private Product _product3;
-        private List<StoreItem> Items;
+        private List<StoreItem> Items = new List<StoreItem>();
 
         //constructor for store
         public Store()
