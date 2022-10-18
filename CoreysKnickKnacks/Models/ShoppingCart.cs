@@ -129,11 +129,16 @@ namespace CoreysKnickKnacks.Models
             return null;
         }
 
-        public ShoppingCartItem GetProduct(int id) //Changed from GetProductById as test was failing
+        public ShoppingCartItem GetProduct(int id)
         {
             //linq query FirstOrDefault
             Products.FirstOrDefault(x => x.GetProduct().GetId() == id);
-            
+
+            return null;
+        }
+
+        //public ShoppingCartItem GetProduct(int id) //Changed from GetProductById as test was failing
+        //{
             //if (id == _product1.GetProduct().GetId())
             //{
                 //return _product1;
@@ -149,8 +154,8 @@ namespace CoreysKnickKnacks.Models
                 //return _product3;
             //}
 
-            return null;
-        }
+            //return null;
+        //}
 
         public decimal GetTotal()
         {

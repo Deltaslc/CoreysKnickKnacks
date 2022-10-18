@@ -107,23 +107,31 @@ namespace CoreysKnickKnacks.Models
 
         public Product FindStoreItemById(int id)
         {
-            if (id == _product1.GetId())
-            {
-                return _product1;
-            }
-
-            else if (id == _product2.GetId())
-            {
-                return _product2;
-            }
-
-            else if (id == _product3.GetId())
-            {
-                return _product3;
-            }
+            Items.FirstOrDefault(x => GetId() == id);
 
             return null;
-
         }
+
+        //public Product FindStoreItemById(int id)
+        //{
+            //Items.FirstOrDefault(x => GetId() == id);
+            //if (id == _product1.GetId())
+            //{
+                //return _product1;
+            //}
+
+            //else if (id == _product2.GetId())
+            //{
+                //return _product2;
+            //}
+
+            //else if (id == _product3.GetId())
+            //{
+                //return _product3;
+            //}
+
+            //return null;
+
+        //}
     }
 }
